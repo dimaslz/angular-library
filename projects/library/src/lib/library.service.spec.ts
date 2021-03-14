@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NgHeroiconsService } from './ng-heroicons.service';
+import { LibraryService } from './library.service';
 
-describe('NgHeroiconsService', () => {
-  let service: NgHeroiconsService;
+describe('LibraryService', () => {
+  let service: LibraryService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NgHeroiconsService);
+    service = TestBed.inject(LibraryService);
   });
 
   it('should be created', () => {

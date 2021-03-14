@@ -3,41 +3,38 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-heroicons": {
+    "library": {
       "projectType": "library",
-      "root": "projects/ng-heroicons",
-      "sourceRoot": "projects/ng-heroicons/src",
+      "root": "projects/library",
+      "sourceRoot": "projects/library/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "tsConfig": "projects/ng-heroicons/tsconfig.lib.json",
-            "project": "projects/ng-heroicons/ng-package.json"
+            "tsConfig": "projects/library/tsconfig.lib.json",
+            "project": "projects/library/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ng-heroicons/tsconfig.lib.prod.json"
+              "tsConfig": "projects/library/tsconfig.lib.prod.json"
             }
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-heroicons/src/test.ts",
-            "tsConfig": "projects/ng-heroicons/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-heroicons/karma.conf.js"
+            "main": "projects/library/src/test.ts",
+            "tsConfig": "projects/library/tsconfig.spec.json",
+            "karmaConfig": "projects/library/karma.conf.js"
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/ng-heroicons/tsconfig.lib.json",
-              "projects/ng-heroicons/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/playground/src/**/*.ts",
+              "projects/playground/src/**/*.component.html"
             ]
           }
         }
@@ -67,9 +64,7 @@
               "projects/playground/src/favicon.ico",
               "projects/playground/src/assets"
             ],
-            "styles": [
-              "projects/playground/src/styles.scss"
-            ],
+            "styles": ["projects/playground/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -130,22 +125,16 @@
               "projects/playground/src/favicon.ico",
               "projects/playground/src/assets"
             ],
-            "styles": [
-              "projects/playground/src/styles.scss"
-            ],
+            "styles": ["projects/playground/src/styles.scss"],
             "scripts": []
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/playground/tsconfig.app.json",
-              "projects/playground/tsconfig.spec.json",
-              "projects/playground/e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/playground/src/**/*.ts",
+              "projects/playground/src/**/*.component.html"
             ]
           }
         },

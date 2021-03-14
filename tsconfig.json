@@ -12,20 +12,14 @@
     "declaration": false,
     "downlevelIteration": true,
     "paths": {
-      "ng-heroicons": [
-        "dist/ng-heroicons/ng-heroicons",
-        "dist/ng-heroicons"
-      ]
+      "library": ["dist/library/library", "dist/library"]
     },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "lib": ["es2018", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
