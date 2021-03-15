@@ -1,10 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { TestBed } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
+import { LibraryModule } from '../../../library/src/public-api';
+import { AngularIconComponent } from './angular-icon.component';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [AppComponent, AngularIconComponent],
+      imports: [BrowserModule, CommonModule, LibraryModule],
     }).compileComponents();
   });
 
@@ -19,15 +24,4 @@ describe('AppComponent', () => {
     const app = fixture.componentInstance;
     expect(app.title).toEqual('playground');
   });
-
-  /* eslint-disable */
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain(
-      'playground app is running!'
-    );
-  });
-  /* eslint-enable */
 });
